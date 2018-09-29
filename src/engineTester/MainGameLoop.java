@@ -16,15 +16,19 @@ public class MainGameLoop {
 		Renderer renderer = new Renderer();
 		
 		float[] vertices = {
-			    -0.5f, 0.5f, 0f, //vertices that describe two triangles to create a quad
-			    -0.5f, -0.5f, 0f,
-			    0.5f, -0.5f, 0f,
-			    0.5f, -0.5f, 0f,
-			    0.5f, 0.5f, 0f,
-			    -0.5f, 0.5f, 0f
+				-0.5f, 0.5f, 0f, 
+				   -0.5f, -0.5f, 0f, 
+				   0.5f, -0.5f, 0f,
+				   0.5f, 0.5f, 0f,
+			    
 			  };
 		
-		RawModel quad = loader.loadToVAO(vertices);
+		int[] indices = {
+			    0,1,3,
+			    3,1,2
+			  };
+		
+		RawModel quad = loader.loadToVAO(vertices,indices);
 		
 		while(!Display.isCloseRequested()) {
 			DisplayManager.updateDisplay();

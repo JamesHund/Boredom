@@ -45,6 +45,7 @@ public class Loader {
 		GL20.glVertexAttribPointer(attributeNumber,3,GL11.GL_FLOAT,false,0,0);  //points vao attribute to data in array buffer and specifies use
 		GL15.glBindBuffer(GL15.GL_ARRAY_BUFFER, 0); //unbind current vbo
 		
+		
 	}
 	
 	private void bindIndicesBuffer(int[] indices) {
@@ -74,7 +75,7 @@ public class Loader {
 	}
 	
 	private IntBuffer storeDataInIntBuffer(int[] data) {
-		//puts int dat in an intbuffer
+		//puts int data in an intbuffer
 		IntBuffer buffer = BufferUtils.createIntBuffer(data.length);
 		buffer.put(data);
 		buffer.flip();
